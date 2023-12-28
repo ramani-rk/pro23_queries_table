@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dept</title>
+    <style>
+        table
+        {
+            border-collapse: collapse;
+        }
+        th
+        {
+            background-color: rgb(23, 22, 22);
+            color: antiquewhite;
+        }
+        .one
+        {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h1><u>Display_Dept:-</u></h1>
+            <table border="3px" cellpadding="10px" cellspacing="10px">
+                <tr>
+                    <th>PK</th>
+                    <th>DEPT.NO</th>
+                    <th>DNAME</th>
+                    <th>LOC</th>
+                </tr>
+                {% for dt in Dept %}
+                    <tr class="two">
+                        <td>{{dt.pk}}</td>
+                        <td>{{dt.deptno}}</td>
+                        <td>{{dt.deptname}}</td>
+                        <td>{{dt.loc}}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+        <div class="one">
+            <a href="{% url 'emp' %}">Display_Emp</a>
+        </div>
+    </center>
+</body>
+</html>

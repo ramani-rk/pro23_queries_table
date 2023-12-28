@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMP</title>
+    <style>
+        table
+        {
+            border-collapse: collapse;
+        }
+        th
+        {
+            background-color: rgb(23, 22, 22);
+            color: antiquewhite;
+        }
+
+        .one
+        {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h1><u>Display_Emp:-</u></h1>
+            <table border="3px" cellpadding="10px" cellspacing="10px">
+                <tr>
+                    <th>PK</th>
+                    <th>EMP.NO</th>
+                    <th>DEPTNO</th>
+                    <th>ENAME</th>
+                    <th>JOB</th>
+                    <th>MGR</th>
+                    <th>EMAIL</th>
+                    <th>HIREDATE</th>
+                    <th>SALARY</th>
+                    <th>COMM</th>
+                </tr>
+                {% for ep in Emp %}
+                    <tr class="two">
+                        <td>{{ep.pk}}</td>
+                        <td>{{ep.empno}}</td>
+                        <td>{{ep.deptno}}</td>
+                        <td>{{ep.ename}}</td>
+                        <td>{{ep.job}}</td>
+                        <td>{{ep.MGR_id}}</td>
+                        <td>{{ep.email}}</td>
+                        <td>{{ep.Hiredate}}</td>
+                        <td>{{ep.salary}}</td>
+                        <td>{{ep.comm}}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+        <div class="one">
+            <a href="{% url 'dept' %}">Return_Dept_Table</a>
+        </div>
+    </center>
+</body>
+</html>
